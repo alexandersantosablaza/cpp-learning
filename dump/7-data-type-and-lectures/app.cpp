@@ -322,6 +322,18 @@ int main()
       << "ulongg size: " << sizeof(ulongg) << "bytes and data value is: " << ulongg << std::endl
       << "llongg size: " << sizeof(llongg) << "bytes and data value is: " << llongg << std::endl;
 
+  /******************ASSIGNMENT******************/
+  int onetwothree{123}; // declare and set 123 data value for int type (this is signed since no unsigned modifier)
+  std::cout << onetwothree << std::endl;
+  onetwothree = -0123; // this is octal because it has 0 in the first 1 x 8 ^ 2  (64)  +     2 X 8 ^ 1  (16)  +     3 X 8 ^ 0 (3) = 64 + 16 + 3 = 83
+  std::cout << onetwothree << std::endl;
+
+  // in auto keyword is warning if adjusting the value
+  // if the initialized data is unsigned
+  // setting the value to a negative will cause problem
+  // like here: auto n{123u};  an positive number
+  // if assigned to n = -123 then it is illegal
+
   /******************STRINGS******************/
 
   const std::string letter = {};
