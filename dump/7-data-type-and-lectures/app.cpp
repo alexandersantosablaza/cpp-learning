@@ -334,9 +334,23 @@ int main()
   // like here: auto n{123u};  an positive number
   // if assigned to n = -123 then it is illegal
 
+  int a = int();
+
+  std::cout << a << std::endl; // prints an 0
+
   /******************STRINGS******************/
 
-  const std::string letter = {};
+  std::string letter = {}; // {} is similar to an object
+
+  std::cout << letter << std::endl; // this is a blank string at the moment
+
+  letter = "asdasdasd";
+
+  // std::string is similar to the std::cout but it is named in the memory
+  // the string and the cout is an object found in the std
+  // the specific location that is stream is located and named of which was stored
+
+  std::cout << letter;
 
   return 0;
 }
