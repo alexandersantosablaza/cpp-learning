@@ -274,6 +274,54 @@ int main()
       << sizeof(bool) << " in byte"
       << std::endl;
 
+  /******************CHARACTER******************/
+  // any thing that represents a something as a single unit
+  // 1 byte char like a letter or a number or anything like -> @
+  // unicode is a character encoding format
+  // ascii is a character encoding format
+
+  // print the converted value of 65 to character encoding, the static_cast<type> is in iostream
+  {
+    std::cout << static_cast<char>(65) << std::endl; // print A -> from ascii table decimal 65 is A
+  }
+
+  char A{'A'};
+  char E{'E'};
+  char I{'I'};
+  char O{'O'};
+  char U{'U'};
+  std::cout
+      << A
+      << E
+      << I
+      << O
+      << U
+      << std::endl;
+
+  // INITIALIZATION A VARIABLE with use of keyword auto
+
+  auto intg{1};
+  auto dbl{13.0};
+  auto flt{13.0F};
+  auto lngg{13.0L};
+  auto chr{'L'};
+  auto uintg{123U};    // unsigned int
+  auto ulongg{123UL};  // unsigned long
+  auto llongg{1234LL}; // long long
+
+  // using the auto keyword or clause will make the compiler fetch for the type that is assigned in the data
+  // in auto clause as data type compile time will understand what value is data to infer type
+
+  std::cout
+      << "intg size: " << sizeof(intg) << " bytes and data value is: " << intg << std::endl
+      << "dbl size: " << sizeof(dbl) << " bytes and data value is: " << dbl << std::endl
+      << "flt size: " << sizeof(flt) << " bytes and data value is: " << flt << std::endl
+      << "lngg size: " << sizeof(lngg) << " bytes and data value is: " << lngg << std::endl
+      << "chr size: " << sizeof(chr) << " bytes and data value is: " << chr << std::endl
+      << "uintg size: " << sizeof(uintg) << "bytes and data value is: " << uintg << std::endl
+      << "ulongg size: " << sizeof(ulongg) << "bytes and data value is: " << ulongg << std::endl
+      << "llongg size: " << sizeof(llongg) << "bytes and data value is: " << llongg << std::endl;
+
   /******************STRINGS******************/
 
   const std::string letter = {};
