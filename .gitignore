@@ -3,3 +3,5 @@ app.exe
 data
 LICENSE
 dump/README
+!dump
+dep
