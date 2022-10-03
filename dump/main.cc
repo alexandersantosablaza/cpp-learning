@@ -28,7 +28,6 @@ int main(int argc, char *argv[])
 	concatSameLen("123456789", "98765432");
 	
 	//test cases
-	concatSameLen("gago","obob");
 	concatSameLen("rocky","balboa");
 	concatSameLen("haha", "choco");
 	concatSameLen("Bruce","Lee");
