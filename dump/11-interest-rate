@@ -1,0 +1,21 @@
+#include<iostream>
+#include<cmath>
+
+int main()
+{
+
+
+float annum{};
+float principal(10000);
+float rate(0.03f);
+
+for(short int day = 1; day <= 20; day++l)
+{
+ annum = principal * pow(1 + rate, day);
+ std::cout << day << "---- money: " << annum << std::endl;
+}
+
+
+return 0;
+
+}
