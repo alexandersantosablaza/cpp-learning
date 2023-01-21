@@ -225,11 +225,33 @@ namespace util
               << "&a";
     return;
   }
+  void sample17()
+  {
+    std::cout << "Enter string: ";
+    std::string s;
+    std::cin >> s;
+    s.push_back('S');
+    std::cout << s << "\n";
+    s.insert(0, 2, 'S');
+    std::cout << s << "\n";
+    s.pop_back();
+    std::cout << s << "\n";
+    return;
+  };
+  void sampl18(void)
+  {
+    std::cout << "Welcom";
+    int n1{}, n2{};
+    std::cout << "Enter n: ";
+    std::cin >> n1 >> n2;
+    std::cout << "Sum: " << (n1 + n2) << "\n";
+    return;
+  }
 
 }
 
 int main()
 {
-  ::util::sample16();
+  ::util::sampl18();
   return 0;
 }
