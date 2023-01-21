@@ -478,9 +478,48 @@ namespace util
     }
     return result;
   }
+  void m()
+  {
+    std::cout << "conditional ops\n";
+    int m{0};
+    std::cout << (!m ? "yes" : "no")
+              << "\n";
+    return;
+  }
+  class Base
+  {
+  public:
+    int x;
+    int y;
+    char c;
+  };
+  struct B
+  {
+    int x;
+    int y;
+    int z;
+  };
+  void fun(int arr[] = {}, int size = 0)
+  {
+  }
+  void bitss()
+  {
+    Base o;
+    std::cout << sizeof(Base);
+    std::cout << sizeof(o);
+    std::cout << sizeof(B);
+    int arr[] = {1, 2, 3, 4, 5};
+    int size{sizeof(arr) / sizeof(arr[0])};
+    fun(arr, size);
+    return;
+  }
 }
-
 int main()
+{
+  ::util::bitss();
+  return 0;
+}
+int subq()
 {
   //  int a[] = {1, 2, 31, 532, 234, 234, 1, 2, 4, 7, 323, 532, 234, 4, 7, 1, 2};
   int a[] = {1, 2, 3, 2, 1, 3, 2};
