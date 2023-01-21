@@ -365,11 +365,126 @@ namespace util
       std::cout << allocated[i] << " ";
     } // there are only 5 defined constant the last one is default value of 6 lengths
     std::cout << "\n";
+    std::cout << "Another\n";
+    int arr[10];
+    std::fill_n(arr, 10, 3);
+    for (int i = 0; i < sizeof(arr) / sizeof(arr[i]); i++)
+    {
+      std::cout << arr[i] << " ";
+    }
+    std::cout << "\n";
+    return;
+  }
+  void sampl1(void)
+  {
+    int multi[3][3] = {{1, 2, 3}, {4, 5, 6}};
+
+    for (int i = 0; i < sizeof(multi) / sizeof(multi[i]); i++)
+    {
+      for (int j = 0; j < sizeof(multi[i]) / sizeof(multi[i][j]); j++)
+      {
+        std::cout << multi[i][j] << " ";
+      }
+      std::cout << "\n";
+    }
+    // this is a value type of this type.
+    return;
+  }
+  void simpl()
+  {
+    // referencing!
+    // std::cout << "Reference op/derefence op\n";
+
+    return;
+  };
+  const int quadruple(int N, int a[])
+  {
+    int max{};
+    int result{0};
+    int siz = N * 2 * 4;
+    int sumLeft[siz][siz];
+    int sumRight[siz][siz];
+    for (int i{0}; i < N; i++)
+    {
+      if (a[i] > max)
+      {
+        max = a[i];
+      }
+    }
+    for (int i{0}; i < N; i++)
+    {
+      sumLeft[a[i]][i] = 1;
+      sumRight[a[i]][i] = 1;
+    }
+    for (int i{0}; i <= max; i++)
+    {
+      for (int j{0}; j < N; j++)
+      {
+        sumLeft[i][j] = sumLeft[i][j - 1] + sumLeft[i][j];
+      }
+      for (int j{N - 2}; j >= 0; j--)
+      {
+        sumRight[i][j] = sumRight[i][j + 1] + sumRight[i][j];
+      }
+    }
+    for (int i{1}; i < N; i++)
+    {
+      for (int j{i + 1}; j < N - 1; j++)
+      {
+        result = result + (sumLeft[a[j]][i - 1] * sumRight[a[j]][j + 1]);
+      }
+    }
+    return result;
+
+    // for (int i{0}, j{0}, k{0}, l{0}; i < N; i++)
+
+    // {
+    //   while (j < N)
+    //   {
+    //     j++;
+    //     while (k < N)
+    //     {
+    //       k++;
+    //       while (l < N)
+    //       {
+    //         if (a[i] == a[k] && a[j] == a[l])
+    //           result = a[i]
+
+    //               l++;
+    //       }
+    //     }
+    //   }
+    // }
+    // return -1;
+  }
+  const int subsequence(int a[], int N)
+  {
+    int result{0};
+    for (int i = 0; i < N; i++)
+    {
+      for (int j = i + 1; j < N; j++)
+      {
+        for (int k = j + 1; k < N; k++)
+        {
+          for (int l = k + 1; l < N; l++)
+          {
+            if (a[i] == a[k] && a[j] == a[l])
+            {
+              result++;
+            }
+          }
+        }
+      }
+    }
+    return result;
   }
 }
 
 int main()
 {
-  ::util::arrays();
+  //  int a[] = {1, 2, 31, 532, 234, 234, 1, 2, 4, 7, 323, 532, 234, 4, 7, 1, 2};
+  int a[] = {1, 2, 3, 2, 1, 3, 2};
+  int x = ::util::subsequence(a, (sizeof(a) / sizeof(a[0])));
+  std::cout << x;
   return 0;
 }
