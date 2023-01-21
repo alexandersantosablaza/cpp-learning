@@ -2,6 +2,7 @@
 int main(void)
 {
   int val{};
+  std::cin >> val;
   switch (val)
   {
   case 1:
