@@ -304,7 +304,6 @@ namespace util
     customFnSwap(&a, &b);
     std::cout << "value of a: " << a << "\n";
     std::cout << "value of b: " << b << "\n";
-
     return;
   }
   void customFnSwap(int *a, int *b)
@@ -313,11 +312,23 @@ namespace util
     *b = *a - *b;
     *a = *a - *b;
   }
+  void addsal(int &x)
+  {
+    x += 1000;
+    std::cout << "total inside callback: " << x << "\n";
+  }
+  void smpl23(void)
+  {
+    int sal{800};
+    addsal(sal);
+    std::cout << "total outside callback: " << sal << "\n";
+    return;
+  }
 
 }
 
 int main()
 {
-  ::util::smpl22();
+  ::util::smpl23();
   return 0;
 }
