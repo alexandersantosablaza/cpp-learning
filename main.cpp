@@ -357,9 +357,10 @@ namespace util
     }
   }
 }
-
+#include "product.hh"
 int main()
 {
-  ::util::recurs();
+  std::cout << "product" << (::test::product(3, 4)) << "\n";
+  //  ::util::recurs();
   return 0;
 }
