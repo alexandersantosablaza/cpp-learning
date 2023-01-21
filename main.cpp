@@ -324,11 +324,42 @@ namespace util
     std::cout << "total outside callback: " << sal << "\n";
     return;
   }
-
+  const unsigned long long int factor(int n)
+  {
+    if (n < 1)
+    {
+      return 1;
+    }
+    else
+    {
+      return n * factor(n - 1);
+    }
+  }
+  const unsigned long long int fib(int num);
+  void recurs(void)
+  {
+    int num{};
+    std::cout << "function call enter num: \n";
+    //   std::cin >> num;
+    auto x = ::util::factor(num);
+    std::cout << "return value: " << x << "\n";
+    fib(-1);
+  }
+  const unsigned long long int fib(int num)
+  {
+    if (num <= 1)
+    {
+      return num;
+    }
+    else
+    {
+      return fib(num - 1) + fib(num - 2);
+    }
+  }
 }
 
 int main()
 {
-  ::util::smpl23();
+  ::util::recurs();
   return 0;
 }
