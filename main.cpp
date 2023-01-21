@@ -356,10 +356,20 @@ namespace util
       return fib(num - 1) + fib(num - 2);
     }
   }
+  void arrays(void)
+  {
+    std::cout << "intefacing arrays!\n";
+    int allocated[6] = {5, 3, 2, 1, 2};
+    for (int i{0}; i < (sizeof(allocated) / sizeof(allocated[i])); i++)
+    {
+      std::cout << allocated[i] << " ";
+    } // there are only 5 defined constant the last one is default value of 6 lengths
+    std::cout << "\n";
+  }
 }
 
 int main()
 {
-  ::util::recurs();
+  ::util::arrays();
   return 0;
 }
