@@ -247,11 +247,77 @@ namespace util
     std::cout << "Sum: " << (n1 + n2) << "\n";
     return;
   }
+  void sampl19(void)
+  {
+    std::cout << "Name onscreen\n";
+    int count{10};
+    while (count)
+    {
+      std::cout << "tentimes: " << count << "\n";
+      count--;
+    }
+  }
+  void sampl20(void)
+  {
+    int i{0};
+    int j{};
+    int k{};
+    while (i < 10)
+    {
+      j = 0;
+      k = 10;
+      while (k >= i)
+      {
+        std::cout << " ";
+        k--;
+      }
+      while (j <= i)
+      {
+        std::cout << "*";
+        j++;
+      }
+      std::cout << "\n";
+      i++;
+    }
+    return;
+  }
+  void smpl21(void)
+  {
+    int num{100};
+    while (num >= 90)
+    {
+      if (num == 96)
+      {
+        num--;
+        continue;
+      }
+      std::cout << "Value is " << num << "\n";
+      num--;
+    }
+    return;
+  }
+  void customFnSwap(int *, int *);
+  void smpl22()
+  {
+    std::cout << "changes in passing...\n";
+    int a{23}, b{34};
+    customFnSwap(&a, &b);
+    std::cout << "value of a: " << a << "\n";
+    std::cout << "value of b: " << b << "\n";
+
+    return;
+  }
+  void customFnSwap(int *a, int *b)
+  {
+    *a = *a + *b;
+    *b = *a - *b;
+    *a = *a - *b;
+  }
 
 }
 
 int main()
 {
-  ::util::sampl18();
+  ::util::smpl22();
   return 0;
 }
