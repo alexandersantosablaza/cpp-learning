@@ -1,18 +1,38 @@
 #include <iostream>
 
-inline void print(int times = 0)
+class Base
 {
-  if (times == 0)
+private:
+public:
+  int x;
+  static int y;
+
+public:
+  Base()
   {
-    return;
+    x = 0;
+    std::cout << "base(" << x << "," << y << ")\n";
   }
-  std::cout << "C++: " << times << "\n";
-  --times;
-  print(times);
-  std::cout << "reverse: " << times << "\n";
-}
+  Base(int x) : x{x}
+  {
+    std::cout << "base(" << x << "," << y << ")\n";
+  }
+  void print()
+  {
+    std::cout << "base(" << x << "," << y << ")\n";
+  }
+};
+int Base::y;
 int main(void)
 {
-  print(3);
+
+  Base b;
+  b.x = 10;
+  Base b2;
+  b2.x = 20;
+  Base::y = 30;
+  b.print();
+  b2.print();
+
   return 0;
 }
