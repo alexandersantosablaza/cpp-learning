@@ -30,7 +30,7 @@ int main()
 {
   for (int i = 0; i < 10000; i++)
   {
-    printME("Hi cppnuts");
+    printME("Hi cpp");
   }
   return 0;
 }
