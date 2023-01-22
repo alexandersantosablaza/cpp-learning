@@ -1,24 +1,18 @@
 #include <iostream>
-class initializers
+
+inline void print(int times = 0)
 {
-
-  char x;
-  int y;
-
-public:
-  initializers()
+  if (times == 0)
   {
+    return;
   }
-  initializers(char a = 0, int z = 0) : x{a}, y{z} {}
-  const void print()
-  {
-    std::cout << "X: " << x << " Y: " << y << "\n";
-  }
-};
-
-int main()
+  std::cout << "C++: " << times << "\n";
+  --times;
+  print(times);
+  std::cout << "reverse: " << times << "\n";
+}
+int main(void)
 {
-  initializers b(100, 200);
-  b.print();
+  print(3);
   return 0;
 }
