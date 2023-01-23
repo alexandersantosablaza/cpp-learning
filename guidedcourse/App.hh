@@ -34,13 +34,13 @@ namespace App
   }
   namespace Data
   {
-
+    std::string title{"I AM AMAZING"};
   }
   static void Init()
   {
     using namespace UI;
     Billboard b;
-    b.setTitle("I AM AMAZING");
+    b.setTitle(Data::title);
     b.getTitle();
   };
 }
