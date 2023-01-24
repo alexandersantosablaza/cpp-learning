@@ -17,10 +17,13 @@ namespace entity
     };
     account(account &o)
     {
-      id = o.id;
+      id = o.id ? o.id : ++nextId;
       balance = o.balance;
     };
-    ~account(){};
+    ~account()
+    {
+      std::cout << "account id: " << id << " is destroyed.\n";
+    };
     int id;
     int inputAmount;
     const void state(){};
